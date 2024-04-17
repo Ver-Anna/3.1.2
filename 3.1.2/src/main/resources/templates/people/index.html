@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Все пользователи</title>
+</head>
+<body>
+
+<div th:each="person : ${people}">
+  <a th:href="@{/people/{id}(id=${person.getId()})}"
+     th:text="${person.getName() + ', ' + person.getAge}">Пользователь</a>
+</div>
+
+<br/>
+<hr/>
+
+<a href="/people/new">Создать нового пользователя</a>
+<!-- вводим некое подобие цикла который проходится по элеентам коллекции и выводит каждый в виде штмл кода. person - название временной переменной для
+каждого элемента коллекции
+<A> - ссылка чтобы можно было нажать по каждому человеку и перейти к нему-->
+
+</body>
+</html>
